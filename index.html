@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="./favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- SEO -->
+  <title>wiseTime | Tu tiempo, con precisión</title>
+  <meta name="description"
+    content="wiseTime es el tracker de tiempo definitivo para profesionales. Registro granular de 15 minutos, gestión de categorías segura y análisis detallado." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://andrespineirolage.github.io/wiseTime/" />
+  <meta property="og:title" content="wiseTime | Tu tiempo, con precisión" />
+  <meta property="og:description" content="Registra tu día con precisión de 15 minutos. Privado, local y potente." />
+  <meta property="og:image" content="./logo.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="wiseTime | Tu tiempo, con precisión" />
+  <meta property="twitter:description"
+    content="Registra tu día con precisión de 15 minutos. Privado, local y potente." />
+  <meta property="twitter:image" content="./logo.png" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="apple-touch-icon" href="./logo.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+</head>
+
+<body class="bg-slate-950">
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        // Use relative path for SW to work on subfolders like GitHub Pages
+        navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW registration failed:', err));
+      });
+    }
+  </script>
+</body>
+
+</html>
